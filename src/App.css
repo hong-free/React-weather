@@ -92,6 +92,9 @@ body{
     color: #fff;
   }
 @media(max-width:768px){
+  .weather-box{
+  padding: 0px 10px 10px 10px;
+  }
   .button-box{
   margin: 0;
   display: flex;
@@ -106,7 +109,7 @@ body{
 }
  .add-info p{
   font-size: 12px;
-  padding:10px 10px;
+  padding:20px 20px;
   
  }
 }
