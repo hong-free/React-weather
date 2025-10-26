@@ -21,9 +21,8 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-   height: 100vh;
+  height: 100vh;
   flex-direction: column;
-  
 }
 .weather-box{
    background-image: linear-gradient(-45deg, #061d35 0%, #256cd6 100%);

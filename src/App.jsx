@@ -76,7 +76,6 @@ function App() {
     <div>
       {loading ? (
         <div className="container">
-          {" "}
           <ClipLoader
             color="#f88c6b"
             loading={loading}
