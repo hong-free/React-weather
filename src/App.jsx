@@ -7,8 +7,6 @@ import WeatherBox from "./component/WeatherBox";
 import WeatherButton from "./component/WeatherButton";
 import { ClipLoader } from "react-spinners";
 
-
-
 //1.앱이 실행되자마자 현재위치기반에 날씨가 보인다.
 //2.날씨정보에는 도시, 섭씨, 화씨, 날씨상태정보가 들어간다.
 //3.5개의 버튼이 있다.(1개는 현재위치,4개는 다른 도시)
@@ -20,8 +18,10 @@ function App() {
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [apiError, setAPIError] = useState("");
 
   const cities = ["paris", "new york", "tokyo", "seoul"];
+
   const getCurrentLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
       let lat = position.coords.latitude;
@@ -57,8 +57,10 @@ function App() {
   };
   useEffect(() => {
     if (city == null) {
+      setLoading(true);
       getCurrentLocation();
     } else {
+      setLoading(true);
       getWeatherByCity();
     }
   }, [city]);
@@ -83,7 +85,7 @@ function App() {
             data-testid="loader"
           />
         </div>
-      ) : (
+      ) : !apiError ? (
         <div className="container">
           <WeatherBox weather={weather} />
           <WeatherButton
@@ -92,6 +94,8 @@ function App() {
             selectedCity={city}
           />
         </div>
+      ) : (
+        apiError
       )}
     </div>
   );
