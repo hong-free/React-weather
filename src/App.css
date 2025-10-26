@@ -12,15 +12,13 @@
 }
 
 body{
-
-  height: 100vh;
 }
 .container{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-   height: 100vh;
+  height: 100vh;
   flex-direction: column;
 }
 .weather-box{
@@ -30,7 +28,7 @@ body{
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.281);
   color: #fff;
-  padding: 0px 10px 30px 10px;
+  padding: 0px 10px 20px 10px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
@@ -44,14 +42,6 @@ body{
  left:0;
  bottom: 0;
  background-color: rgba(255, 255, 255, 0.25);
-}
-.weather-box > .fa{
-  font-size: 60px;
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
-  border-radius: 50%;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
 }
 .weather-box h1{
   font-weight: bold;
@@ -101,3 +91,22 @@ body{
     border: 1px solid #ffffff;
     color: #fff;
   }
+@media(max-width:768px){
+  .button-box{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.button-box button{
+  font-size: 12px;
+  border-radius: 10px;
+  margin: 2px;
+  padding: 5px;
+}
+ .add-info p{
+  font-size: 12px;
+  padding:10px 10px;
+  
+ }
+}
